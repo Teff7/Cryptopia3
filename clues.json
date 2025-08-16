@@ -4,10 +4,12 @@
     "clue": "Mixed nuts can cause shock (4)",
     "answer": "STUN",
     "length": 4,
+
     "definition": {
       "text": "cause shock",
       "role": "definition"
     },
+
     "parse": {
       "type": "anagram",
       "parts": [
@@ -19,49 +21,94 @@
         }
       ]
     },
+
     "tooltips": {
       "clueType": "This is an ANAGRAM clue: scramble the letters in fodder to form the answer.",
       "components": [
-        { "anchor": "Mixed", "for": "stun", "text": "ANAGRAM indicator: tells you to rearrange the letters of the fodder." },
-        { "anchor": "nuts", "for": "stun", "text": "FODDER: these letters are rearranged to make the answer." },
-        { "anchor": "cause shock", "for": "definition", "text": "DEFINITION: What the final answer means." }
+        {
+          "anchor": "Mixed",
+          "for": "stun",
+          "text": "ANAGRAM indicator, this tells you to rearrange the letters of the fodder."
+        },
+        {
+          "anchor": "nuts",
+          "for": "stun",
+          "text": "FODDER: rearrange the letters in NUTS to make a word that means the same as the definition."
+        },
+        {
+          "anchor": "cause shock",
+          "for": "definition",
+          "text": "This is the definition"
+        }
       ]
     },
-    "indicatorsUsed": [ { "text": "Mixed", "category": "anagram" } ],
+
+    "indicatorsUsed": [
+      { "text": "Mixed", "category": "anagram" }
+    ],
+
     "meta": { "noSpoilers": true }
   },
+
   {
     "id": "2025-08-16-TOLL",
-    "clue": "Sound of a church bell; a number for those who have passed (4)",
+    "clue": "Sound of a church bell, is a number for those who have passed (4)",
     "answer": "TOLL",
     "length": 4,
+
     "definition": {
-      "text": "Sound of a church bell; a number for those who have passed",
+      "text": "a number for those who have passed",
       "role": "definition"
     },
+
     "parse": {
       "type": "double-definition",
-      "parts": []
+      "parts": [
+        {
+          "id": "def1",
+          "type": "definition",
+          "source": { "text": "Sound of a church bell" }
+        },
+        {
+          "id": "def2",
+          "type": "definition",
+          "source": { "text": "a number for those who have passed" }
+        }
+      ]
     },
+
     "tooltips": {
       "clueType": "This is a DOUBLE DEFINITION: two separate definitions lead to the same answer.",
       "components": [
-        { "anchor": "Sound of a church bell", "for": "definition", "text": "First definition." },
-        { "anchor": "a number for those who have passed", "for": "definition", "text": "Second definition." }
+        {
+          "anchor": "Sound of a church bell",
+          "for": "def1",
+          "text": "First definition."
+        },
+        {
+          "anchor": "a number for those who have passed",
+          "for": "def2",
+          "text": "Second definition."
+        }
       ]
     },
+
     "indicatorsUsed": [],
+
     "meta": { "noSpoilers": true }
   },
+
   {
     "id": "2025-08-16-PRANG",
     "clue": "Head of police called, for an accident (5)",
     "answer": "PRANG",
     "length": 5,
+
     "definition": {
       "text": "an accident",
       "role": "definition"
     },
+
     "parse": {
       "type": "charade",
       "parts": [
@@ -79,27 +126,51 @@
         }
       ]
     },
+
     "tooltips": {
       "clueType": "This is a CHARADES clue: assemble smaller pieces to build the answer.",
       "components": [
-        { "anchor": "Head of", "for": "p", "text": "INITIAL-LETTER indicator: take the head of POLICE." },
-        { "anchor": "police", "for": "p", "text": "Base word whose first letter gives P." },
-        { "anchor": "called", "for": "rang", "text": "SYNONYM: 'called' gives RANG." },
-        { "anchor": "an accident", "for": "definition", "text": "DEFINITION: PRANG means a crash or accident." }
+        {
+          "anchor": "Head of",
+          "for": "p",
+          "text": "INITIAL-LETTER indicator, this tells you to take the first letter from another word in the clue"
+        },
+        {
+          "anchor": "police",
+          "for": "p",
+          "text": "What is the 'head' of the word 'police'"
+        },
+        {
+          "anchor": "called",
+          "for": "rang",
+          "text": "Think of another word for 'called' that fits in the highlighted squares"
+        },
+        {
+          "anchor": "an accident",
+          "for": "definition",
+          "text": "This is the definition"
+        }
       ]
     },
-    "indicatorsUsed": [ { "text": "Head of", "category": "initial-letter" } ],
+
+    "indicatorsUsed": [
+      { "text": "Head of", "category": "initial-letter" }
+    ],
+
     "meta": { "noSpoilers": true }
   },
+
   {
     "id": "2025-08-16-TARIFF",
-    "clue": "Snitch turns back if figurehead Trump Tax (6)",
+    "clue": "Snitch turns back if figurehead Trump Tax (6)",A
     "answer": "TARIFF",
     "length": 6,
+
     "definition": {
       "text": "Trump Tax",
       "role": "definition"
     },
+
     "parse": {
       "type": "charade",
       "parts": [
@@ -123,6 +194,7 @@
         }
       ]
     },
+
     "tooltips": {
       "clueType": "This is a CHARADES clue: assemble smaller pieces to build the answer. Each highlighted component contributes letters that combine to equal the definition.",
       "components": [
@@ -134,7 +206,7 @@
         {
           "anchor": "turns back",
           "for": "tar",
-          "text": "REVERSAL indicator: it tells you to reverse the order of the letters in the fodder that it applies to, here the fodder is SNITCH (find the synonym)."
+          "text": "REVERSAL indicator: this tells you to reverse the order of the letters in the fodder that it applies to, here the fodder is SNITCH (find the synonym)."
         },
         {
           "anchor": "if",
@@ -144,7 +216,7 @@
         {
           "anchor": "figurehead",
           "for": "f",
-          "text": "This component requires you to take the head from FIGURE."
+          "text": "This component requires you to take the 'head' from FIGURE."
         },
         {
           "anchor": "Trump Tax",
@@ -153,18 +225,26 @@
         }
       ]
     },
-    "indicatorsUsed": [ { "text": "turns back", "category": "reversal" }, { "text": "figurehead", "category": "initial-letter" } ],
+
+    "indicatorsUsed": [
+      { "text": "turns back", "category": "reversal" },
+      { "text": "figurehead", "category": "initial-letter" }
+    ],
+
     "meta": { "noSpoilers": true }
   },
+
   {
     "id": "2025-08-16-NEAR",
     "clue": "Seen on early close (4)",
     "answer": "NEAR",
     "length": 4,
+
     "definition": {
       "text": "close",
       "role": "definition"
     },
+
     "parse": {
       "type": "hidden",
       "parts": [
@@ -176,6 +256,7 @@
         }
       ]
     },
+
     "tooltips": {
       "clueType": "This is a HIDDEN-WORD clue: the answer is hidden across word boundaries in the fodder.",
       "components": [
@@ -196,7 +277,11 @@
         }
       ]
     },
-    "indicatorsUsed": [ { "text": "Seen", "category": "hidden" } ],
+
+    "indicatorsUsed": [
+      { "text": "Seen", "category": "hidden" }
+    ],
+
     "meta": { "noSpoilers": true }
   }
 ]
