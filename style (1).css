@@ -1,0 +1,260 @@
+/* Base layout */
+body {
+  margin: 0;
+  padding: 0;
+  background: black;
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Screen containers */
+.welcome-screen,
+.game-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.welcome-message {
+  font-size: 2rem;
+}
+
+/* Buttons */
+.play-button,
+.submit-button,
+.help-button {
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.play-button {
+  margin-top: 2rem;
+}
+
+/* Clue */
+.clue {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  position: relative;
+  text-align: center;
+}
+
+/* Board layout */
+.board {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.squares {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.word-group {
+  display: flex;
+  gap: 0.5rem;
+  margin-right: 0;
+}
+
+.submit-button {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Letter squares */
+.square {
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid white;
+  background: white;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  transition: background 120ms, color 120ms, outline-color 120ms, filter 120ms;
+}
+
+.square.active {
+  animation: flashFill 1s infinite alternate;
+}
+
+@keyframes flashFill {
+  0%   { background: white; color: black; }
+  100% { background: black; color: white; }
+}
+
+/* Clear, high-contrast highlight that never hides the square */
+.square.mapped {
+  outline: 2px solid white;
+  outline-offset: 3px;
+  box-shadow: 0 0 10px rgba(255,255,255,.35);
+}
+
+.square.mapped.active {
+  animation: none;
+}
+
+/* Feedback flashes */
+.game-screen.flash-red .square {
+  animation: redFlash 0.2s 3 alternate;
+}
+
+@keyframes redFlash {
+  0%   { background: white; color: black; }
+  100% { background: red;   color: white; }
+}
+
+.game-screen.flash-green .square {
+  animation: greenFlash 2s 1;
+}
+
+@keyframes greenFlash {
+  0%   { background: white; color: black; }
+  50%  { background: green; color: white; }
+  100% { background: white; color: black; }
+}
+
+/* Action bar and dropdown */
+.actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  width: 100%;
+  gap: 0.5rem; /* Add space between hints dropdown and give up button */
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: black;
+  color: white;
+  border: 2px solid white;
+  border-radius: 12px;
+  padding: 0.5rem;
+  min-width: 260px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(255,255,255,0.08);
+  z-index: 20;
+}
+
+.dropdown.open .menu {
+  display: block;
+}
+
+.menu-item {
+  display: block;
+  width: 100%;
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 0.5rem 0.75rem;
+  margin: 0.3rem 0;
+  cursor: pointer;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.menu-item:hover {
+  background: white;
+  color: black;
+}
+
+.menu-item[disabled] {
+  opacity: 0.55;
+  cursor: default;
+}
+
+/* Fireworks */
+.fireworks {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+
+.pixel {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+}
+
+/* Highlight classes for clue annotation */
+.indicator,
+.fodder,
+.def {
+  position: relative;
+  cursor: pointer;
+}
+
+.clue.help-on .def {
+  color: hotpink;
+}
+
+.clue.annot-on .indicator {
+  color: var(--indicator-col, lightblue);
+}
+
+.clue.annot-on .fodder {
+  color: red;
+}
+
+.clue.annot-on .def {
+  text-decoration: underline;
+}
+
+.clue.annot-on .indicator:hover::after,
+.clue.annot-on .fodder:hover::after,
+.clue.annot-on .def:hover::after {
+  content: attr(data-tooltip);
+  color: black;
+  background: white;
+  padding: 0.2rem 0.35rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  position: absolute;
+  top: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  z-index: 10;
+}
+
+/* Colour indicators by clue type */
+.clue.anagram    { --indicator-col: lightblue; }
+.clue.hidden     { --indicator-col: green; }
+.clue.container  { --indicator-col: purple; }
+.clue.reversal   { --indicator-col: teal; }
+.clue.deletion   { --indicator-col: gold; }
+.clue.homophone  { --indicator-col: magenta; }
+.clue.acrostic   { --indicator-col: navy; }
+.clue.spoonerism { --indicator-col: orange; }
+.clue.charade    { --indicator-col: brown; }
+.clue.double     { --indicator-col: gold; }
+.clue.lit        { --indicator-col: silver; }
