@@ -1,0 +1,202 @@
+[
+  {
+    "id": "2025-08-16-STUN",
+    "clue": "Mixed nuts can cause shock (4)",
+    "answer": "STUN",
+    "length": 4,
+    "definition": {
+      "text": "cause shock",
+      "role": "definition"
+    },
+    "parse": {
+      "type": "anagram",
+      "parts": [
+        {
+          "id": "stun",
+          "type": "anagram",
+          "indicator": { "text": "Mixed", "category": "anagram" },
+          "source": { "text": "nuts" }
+        }
+      ]
+    },
+    "tooltips": {
+      "clueType": "This is an ANAGRAM clue: scramble the letters in fodder to form the answer.",
+      "components": [
+        { "anchor": "Mixed", "for": "stun", "text": "ANAGRAM indicator: tells you to rearrange the letters of the fodder." },
+        { "anchor": "nuts", "for": "stun", "text": "FODDER: these letters are rearranged to make the answer." },
+        { "anchor": "cause shock", "for": "definition", "text": "DEFINITION: What the final answer means." }
+      ]
+    },
+    "indicatorsUsed": [ { "text": "Mixed", "category": "anagram" } ],
+    "meta": { "noSpoilers": true }
+  },
+  {
+    "id": "2025-08-16-TOLL",
+    "clue": "Sound of a church bell; a number for those who have passed (4)",
+    "answer": "TOLL",
+    "length": 4,
+    "definition": {
+      "text": "Sound of a church bell; a number for those who have passed",
+      "role": "definition"
+    },
+    "parse": {
+      "type": "double-definition",
+      "parts": []
+    },
+    "tooltips": {
+      "clueType": "This is a DOUBLE DEFINITION: two separate definitions lead to the same answer.",
+      "components": [
+        { "anchor": "Sound of a church bell", "for": "definition", "text": "First definition." },
+        { "anchor": "a number for those who have passed", "for": "definition", "text": "Second definition." }
+      ]
+    },
+    "indicatorsUsed": [],
+    "meta": { "noSpoilers": true }
+  },
+  {
+    "id": "2025-08-16-PRANG",
+    "clue": "Head of police called, for an accident (5)",
+    "answer": "PRANG",
+    "length": 5,
+    "definition": {
+      "text": "an accident",
+      "role": "definition"
+    },
+    "parse": {
+      "type": "charade",
+      "parts": [
+        {
+          "id": "p",
+          "type": "letter-selection",
+          "strategy": "initial-letter",
+          "indicator": { "text": "Head of", "category": "initial-letter" },
+          "base": "police"
+        },
+        {
+          "id": "rang",
+          "type": "synonym",
+          "source": { "text": "called" }
+        }
+      ]
+    },
+    "tooltips": {
+      "clueType": "This is a CHARADES clue: assemble smaller pieces to build the answer.",
+      "components": [
+        { "anchor": "Head of", "for": "p", "text": "INITIAL-LETTER indicator: take the head of POLICE." },
+        { "anchor": "police", "for": "p", "text": "Base word whose first letter gives P." },
+        { "anchor": "called", "for": "rang", "text": "SYNONYM: 'called' gives RANG." },
+        { "anchor": "an accident", "for": "definition", "text": "DEFINITION: PRANG means a crash or accident." }
+      ]
+    },
+    "indicatorsUsed": [ { "text": "Head of", "category": "initial-letter" } ],
+    "meta": { "noSpoilers": true }
+  },
+  {
+    "id": "2025-08-16-TARIFF",
+    "clue": "Snitch turns back if figurehead Trump Tax (6)",
+    "answer": "TARIFF",
+    "length": 6,
+    "definition": {
+      "text": "Trump Tax",
+      "role": "definition"
+    },
+    "parse": {
+      "type": "charade",
+      "parts": [
+        {
+          "id": "tar",
+          "type": "reversal",
+          "indicator": { "text": "turns back", "category": "reversal" },
+          "source": { "text": "Snitch" }
+        },
+        {
+          "id": "if",
+          "type": "literal",
+          "source": { "text": "if" }
+        },
+        {
+          "id": "f",
+          "type": "letter-selection",
+          "strategy": "initial-letter",
+          "indicator": { "text": "figurehead", "category": "initial-letter" },
+          "base": "figure"
+        }
+      ]
+    },
+    "tooltips": {
+      "clueType": "This is a CHARADES clue: assemble smaller pieces to build the answer. Each highlighted component contributes letters that combine to equal the definition.",
+      "components": [
+        {
+          "anchor": "Snitch",
+          "for": "tar",
+          "text": "This component uses a REVERSAL inside a CHARADES clue. Think of another word for SNITCH, then reverse those letters and enter into the highlighted squares."
+        },
+        {
+          "anchor": "turns back",
+          "for": "tar",
+          "text": "REVERSAL indicator: it tells you to reverse the order of the letters in the fodder that it applies to, here the fodder is SNITCH (find the synonym)."
+        },
+        {
+          "anchor": "if",
+          "for": "if",
+          "text": "LITERAL: ‘if’ contributes the letters IF exactly as written."
+        },
+        {
+          "anchor": "figurehead",
+          "for": "f",
+          "text": "This component requires you to take the head from FIGURE."
+        },
+        {
+          "anchor": "Trump Tax",
+          "for": "definition",
+          "text": "DEFINITION: The wordplay pieces combine to match this definition."
+        }
+      ]
+    },
+    "indicatorsUsed": [ { "text": "turns back", "category": "reversal" }, { "text": "figurehead", "category": "initial-letter" } ],
+    "meta": { "noSpoilers": true }
+  },
+  {
+    "id": "2025-08-16-NEAR",
+    "clue": "Seen on early close (4)",
+    "answer": "NEAR",
+    "length": 4,
+    "definition": {
+      "text": "close",
+      "role": "definition"
+    },
+    "parse": {
+      "type": "hidden",
+      "parts": [
+        {
+          "id": "near",
+          "type": "hidden",
+          "indicator": { "text": "Seen", "category": "hidden" },
+          "source": { "text": "on early" }
+        }
+      ]
+    },
+    "tooltips": {
+      "clueType": "This is a HIDDEN-WORD clue: the answer is hidden across word boundaries in the fodder.",
+      "components": [
+        {
+          "anchor": "Seen",
+          "for": "near",
+          "text": "HIDDEN indicator: look inside the following letters for the answer."
+        },
+        {
+          "anchor": "on early",
+          "for": "near",
+          "text": "FODDER: the answer is somewhere in the words 'on early'."
+        },
+        {
+          "anchor": "close",
+          "for": "definition",
+          "text": "This is the definition."
+        }
+      ]
+    },
+    "indicatorsUsed": [ { "text": "Seen", "category": "hidden" } ],
+    "meta": { "noSpoilers": true }
+  }
+]

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cryptic Clue Trainer</title>
+  <!-- Link to our custom stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Welcome screen shown on first load -->
+  <div id="welcome" class="welcome-screen">
+    <div class="welcome-message">Welcome to Cryptic Clue Trainer!</div>
+    <button id="playButton" class="play-button">Play</button>
+  </div>
+
+  <!-- Main game screen (hidden until Play is clicked) -->
+  <div id="game" class="game-screen" style="display:none;">
+    <div id="clue" class="clue"></div>
+    <div class="board">
+      <div id="squares" class="squares"></div>
+      <!-- Hidden input to capture keystrokes on mobile devices -->
+      <input id="mobileInput" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" style="opacity:0;position:absolute;pointer-events:none;" />
+      <button id="submitBtn" class="submit-button">Submit</button>
+    </div>
+    <!-- Action bar with hints dropdown and give up button -->
+    <div class="actions">
+      <div class="dropdown">
+        <button id="btnHints" class="help-button" aria-haspopup="true" aria-expanded="false">Hints</button>
+        <div id="hintsDropdown" class="menu">
+          <button class="menu-item" id="miDef">Reveal Definition</button>
+          <button class="menu-item" id="miLetter">Reveal Letter</button>
+          <button class="menu-item" id="miAnalyse">Reveal Structure</button>
+          <button class="menu-item" id="miPlain">Skip Clue</button>
+        </div>
+      </div>
+      <button id="btnGiveUp" class="help-button">Give Up</button>
+    </div>
+  </div>
+
+  <!-- Fireworks container shown when all clues solved -->
+  <div id="fireworks" class="fireworks"></div>
+
+  <!-- Load the game script after the DOM elements -->
+  <script src="script.js"></script>
+</body>
+</html>
