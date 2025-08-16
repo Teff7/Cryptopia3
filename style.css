@@ -135,6 +135,7 @@ body {
   justify-content: center;
   margin-top: 1rem;
   width: 100%;
+  gap: 0.5rem; /* Add space between hints dropdown and give up button */
 }
 
 .dropdown {

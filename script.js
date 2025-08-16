@@ -240,7 +240,15 @@ function renderSquares(){
       const box = document.createElement('div');
       box.className = 'square';
       box.textContent = letters[idx] || '';
-      box.onclick = () => { activeIndex = idx; highlightActive(); };
+      // Capture the current index in a separate variable to avoid closure issues
+      const thisIndex = idx;
+      box.onclick = () => {
+        activeIndex = thisIndex;
+        highlightActive();
+        // Refocus the hidden input so typing immediately works after clicking
+        const mi = document.getElementById('mobileInput');
+        if (mi && mi.focus) mi.focus();
+      };
       group.appendChild(box);
       idx++;
     }
@@ -310,15 +318,20 @@ function setupHandlers(){
   if (playBtn) playBtn.addEventListener('click', () => startGame());
 
   // Hints dropdown toggle
+  // Cache the dropdown container so we toggle the correct element.
+  const dropdownContainer = btnHints ? btnHints.parentElement : null;
   btnHints.addEventListener('click', e => {
     e.stopPropagation();
-    dd.classList.toggle('open');
-    btnHints.setAttribute('aria-expanded', dd.classList.contains('open') ? 'true' : 'false');
+    if (dropdownContainer) {
+      dropdownContainer.classList.toggle('open');
+      btnHints.setAttribute('aria-expanded', dropdownContainer.classList.contains('open') ? 'true' : 'false');
+    }
   });
   // Close dropdown when clicking outside
   document.addEventListener('click', e => {
-    if (!dd.contains(e.target) && e.target !== btnHints) {
-      dd.classList.remove('open');
+    if (!dropdownContainer) return;
+    if (!dropdownContainer.contains(e.target) && e.target !== btnHints) {
+      dropdownContainer.classList.remove('open');
       btnHints.setAttribute('aria-expanded','false');
     }
   });
